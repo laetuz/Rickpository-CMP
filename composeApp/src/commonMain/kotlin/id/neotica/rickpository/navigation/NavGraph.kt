@@ -1,17 +1,21 @@
 package id.neotica.rickpository.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import id.neotica.rickpository.presentation.characters.CharactersView
 import id.neotica.rickpository.presentation.MainView
 import id.neotica.rickpository.presentation.SecondView
+import id.neotica.rickpository.presentation.characterdetail.CharacterDetailView
+import id.neotica.rickpository.presentation.characters.CharactersView
 
 @Composable
 fun NavGraph(
@@ -19,12 +23,17 @@ fun NavGraph(
     paddingValues: PaddingValues
 ) {
     NavHost(
-        modifier = Modifier.windowInsetsPadding(WindowInsets.safeDrawing),
+        modifier = Modifier.safeContentPadding(),
         navController = navController,
-        startDestination = Screen.MainScreen
+        enterTransition = { fadeIn(tween(100)) },
+        popEnterTransition = { EnterTransition.None },
+        exitTransition = { fadeOut(tween(100)) },
+        popExitTransition = { ExitTransition.None },
+        startDestination = Screen.CharactersScreen
     ) {
         composable<Screen.MainScreen> { MainView(navController) }
         composable<Screen.SecondScreen> { SecondView(navController) }
         composable<Screen.CharactersScreen> { CharactersView(navController) }
+        composable<Screen.CharacterDetail> { CharacterDetailView(navController) }
     }
 }

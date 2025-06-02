@@ -13,4 +13,6 @@ sealed class Screen {
     data object SecondScreen: Screen()
     @Serializable
     data object CharactersScreen: Screen()
+    @Serializable
+    data class CharacterDetail(val id: Int): Screen()
 }

@@ -1,10 +1,8 @@
-package id.neotica.rickpository.presentation.characters
+package id.neotica.rickpository.presentation.characterdetail
 
-import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
@@ -15,25 +13,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
-import id.neotica.rickpository.navigation.Screen
+import androidx.compose.runtime.getValue
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun CharactersView(
+fun CharacterDetailView(
     navController: NavController,
-    viewModel: CharactersViewModel = koinViewModel()
+    viewModel: CharacterDetailViewModel = koinViewModel()
 ) {
-    val characters = viewModel.characters.collectAsState().value
-    val loading = viewModel.loading.collectAsState().value
+    val characters by viewModel.characters.collectAsState()
+    val loading by viewModel.loading.collectAsState()
+
     Scaffold {
         Column {
             LazyColumn {
-                characters?.let { char ->
-                    items(char) {
+                item {
+                    characters?.let {
                         Card(
-                            Modifier
-                                .padding(bottom = 8.dp)
-                                .combinedClickable { navController.navigate(Screen.CharacterDetail(it.id)) }
+                            Modifier.padding(bottom = 8.dp)
                         ) {
                             Column {
                                 AsyncImage(
