@@ -16,6 +16,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             App()
+//            Image(painterResource(Res.drawable.compose_multiplatform), null)
         }
     }
 }

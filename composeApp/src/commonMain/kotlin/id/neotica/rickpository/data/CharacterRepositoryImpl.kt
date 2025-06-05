@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.Flow
 
 class CharacterRepositoryImpl {
 
-    fun getCharacters(): Flow<ApiResult<List<Character>>> = safeApiCall {
-        val response = ktorClient.get("https://rickandmortyapi.com/api/character").body<RickAndMortyResponse>()
+    fun getCharacter(url: String?): Flow<ApiResult<RickAndMortyResponse>> = safeApiCall {
+        val response = ktorClient.get(url?: "https://rickandmortyapi.com/api/character").body<RickAndMortyResponse>()
 
-        response.results
+        response
     }
 
     fun getCharacterDetail(id: Int): Flow<ApiResult<Character>> = safeApiCallNew<Character> {

@@ -10,9 +10,9 @@ import id.neotica.rickpository.navigation.Screen
 @Composable
 fun MainView(navController: NavController) {
     Scaffold {
-        Text("yeah main view bitches")
+        Text("MainView")
         Button(onClick = {
             navController.navigate(Screen.CharactersScreen)
-        }) { Text("Click here bitch") }
+        }) { Text("Click here") }
     }
 }

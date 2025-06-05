@@ -1,6 +1,8 @@
 package id.neotica.rickpository.presentation.characterdetail
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Card
@@ -14,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -45,7 +48,14 @@ fun CharacterDetailView(
                     }
                 }
                 item {
-                    if (loading) CircularProgressIndicator()
+                    if (loading) Box(
+                        contentAlignment = Alignment.Center,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp)
+                    ) {
+                        CircularProgressIndicator()
+                    }
                 }
             }
         }

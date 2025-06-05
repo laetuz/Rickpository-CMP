@@ -6,9 +6,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,7 +21,6 @@ fun NavGraph(
     paddingValues: PaddingValues
 ) {
     NavHost(
-        modifier = Modifier.safeContentPadding(),
         navController = navController,
         enterTransition = { fadeIn(tween(100)) },
         popEnterTransition = { EnterTransition.None },

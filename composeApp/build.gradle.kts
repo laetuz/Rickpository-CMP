@@ -78,6 +78,8 @@ kotlin {
             implementation(libs.bundles.ktor)
             implementation(libs.bundles.koin)
             implementation(libs.bundles.coil)
+            implementation(libs.droidcore)
+            api("com.diamondedge:logging:2.0.3")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
