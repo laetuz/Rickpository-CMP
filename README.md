@@ -72,4 +72,4 @@ This project uses the public [Rick and Morty API](https://rickandmortyapi.com/do
 
 ## 📝 License
 
-This project is licensed under the **MIT License** (or choose another like Apache 2.0).
+This project is licensed under the **MIT License**.
