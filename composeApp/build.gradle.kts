@@ -79,7 +79,7 @@ kotlin {
             implementation(libs.bundles.koin)
             implementation(libs.bundles.coil)
             implementation(libs.droidcore)
-            api("com.diamondedge:logging:2.0.3")
+            api(libs.diamondedge.logging)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
