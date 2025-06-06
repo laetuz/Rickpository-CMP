@@ -1,4 +1,4 @@
-package id.neotica.rickpository.presentation.characters
+package id.neotica.rickpository.presentation.screen.characters
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,9 +17,6 @@ import kotlinx.coroutines.launch
 class CharactersViewModel: ViewModel() {
     val repository = CharacterRepositoryImpl()
 
-    private val _errorMessage = MutableStateFlow<String?>(null)
-    val errorMessage: StateFlow<String?> = _errorMessage
-
     private val _message = MutableStateFlow<String?>(null)
     val message: StateFlow<String?> = _message
 
@@ -28,8 +25,8 @@ class CharactersViewModel: ViewModel() {
     var hasNext by mutableStateOf(false)
     var paginatedContent by mutableStateOf<Map<Int, RickAndMortyResponse>>(emptyMap())
 
-    private var _currentPage = MutableStateFlow(1)
-    val currentPage: StateFlow<Int> = _currentPage.asStateFlow()
+//    private var _currentPage = MutableStateFlow(1)
+//    val currentPage: StateFlow<Int> = _currentPage.asStateFlow()
 
     private var nextUrl by mutableStateOf("")
 
@@ -68,8 +65,8 @@ class CharactersViewModel: ViewModel() {
                     paginatedContent =  paginatedContent + (currentPageInt to it.data!!)
 
                     if (it.data.info.next != null) {
-                        _currentPage.value = currentPageInt - 1
-                        log.info { "currentpage"+_currentPage.value }
+//                        _currentPage.value = currentPageInt - 1
+//                        log.info { "currentpage"+_currentPage.value }
                         paginatedContent.keys + 1
                         nextUrl = it.data.info.next
                         hasNext = true

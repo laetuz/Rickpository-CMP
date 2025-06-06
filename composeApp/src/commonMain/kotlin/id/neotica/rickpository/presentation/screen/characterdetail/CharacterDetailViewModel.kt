@@ -1,4 +1,4 @@
-package id.neotica.rickpository.presentation.characterdetail
+package id.neotica.rickpository.presentation.screen.characterdetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -20,9 +20,6 @@ class CharacterDetailViewModel(
     val repository = CharacterRepositoryImpl()
 
     private val args = savedStateHandle.toRoute<Screen.CharacterDetail>()
-
-    private val _errorMessage = MutableStateFlow<String?>(null)
-    val errorMessage: StateFlow<String?> = _errorMessage
 
     private val _message = MutableStateFlow<String?>(null)
     val message: StateFlow<String?> = _message

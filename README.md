@@ -15,10 +15,11 @@ A simple Android application built with Kotlin and Jetpack Compose to explore ch
 
 ## 🛠️ Tech Stack & Architecture
 
-This project utilizes a modern Android development stack:
+This project utilizes several modern development stack:
 
-* **Language:** [Kotlin](https://kotlinlang.org/) (100%)
-* **UI Toolkit:** [Jetpack Compose](https://developer.android.com/jetpack/compose) for declarative UI.
+* **Language:** [Kotlin](https://kotlinlang.org/)
+* **Platform:** [Kotlin MultiPlatform](https://www.jetbrains.com/kotlin-multiplatform/)
+* **UI Toolkit:** [Compose MultiPlatform](https://www.jetbrains.com/compose-multiplatform/) for declarative UI.
 * **Architecture:** MVVM (Model-View-ViewModel)
     * **ViewModel:** `androidx.lifecycle.ViewModel` to hold and manage UI-related data.
     * **Repository:** To abstract data sources (network, local database).
