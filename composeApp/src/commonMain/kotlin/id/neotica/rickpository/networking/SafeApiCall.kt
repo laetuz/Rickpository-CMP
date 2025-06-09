@@ -1,7 +1,7 @@
 package id.neotica.rickpository.networking
 
 import id.neotica.rickpository.domain.ApiResult
-import id.neotica.rickpository.domain.apiresult.NotFoundResponse
+import id.neotica.rickpository.domain.model.apiresult.NotFoundResponse
 import io.ktor.client.call.body
 import io.ktor.client.statement.HttpResponse
 import io.ktor.client.statement.bodyAsText

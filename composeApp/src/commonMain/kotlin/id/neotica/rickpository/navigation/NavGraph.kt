@@ -12,8 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import id.neotica.rickpository.presentation.MainView
 import id.neotica.rickpository.presentation.SecondView
-import id.neotica.rickpository.presentation.characterdetail.CharacterDetailView
-import id.neotica.rickpository.presentation.characters.CharactersView
+import id.neotica.rickpository.presentation.screen.characterdetail.CharacterDetailView
+import id.neotica.rickpository.presentation.screen.characters.CharactersView
 
 @Composable
 fun NavGraph(
