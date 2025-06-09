@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import id.neotica.rickpository.domain.ApiResult
-import id.neotica.rickpository.domain.CharacterRepository
+import id.neotica.rickpository.domain.remote.CharacterRepository
 import id.neotica.rickpository.domain.model.Character
 import id.neotica.rickpository.navigation.Screen
 import io.ktor.util.logging.KtorSimpleLogger

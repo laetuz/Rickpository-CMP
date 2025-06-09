@@ -5,9 +5,9 @@ import id.neotica.rickpository.data.mapper.toCharacterEntities
 import id.neotica.rickpository.data.mapper.toPaginationEntity
 import id.neotica.rickpository.data.mapper.toResponse
 import id.neotica.rickpository.domain.ApiResult
-import id.neotica.rickpository.domain.CharacterRepository
+import id.neotica.rickpository.domain.remote.CharacterRepository
 import id.neotica.rickpository.domain.extension.extractPageNumberAfterEquals
-import id.neotica.rickpository.domain.local.RickpositoryLocalDataSource
+import id.neotica.rickpository.domain.local.CharacterLocalDataSource
 import id.neotica.rickpository.domain.model.Character
 import id.neotica.rickpository.domain.model.RickAndMortyResponse
 import id.neotica.rickpository.networking.ktorClient
@@ -18,7 +18,7 @@ import io.ktor.client.request.get
 import kotlinx.coroutines.flow.Flow
 
 class CharacterRepositoryImpl(
-    private val local: RickpositoryLocalDataSource
+    private val local: CharacterLocalDataSource
 ): CharacterRepository {
 
     override fun getCharacter(url: String?): Flow<ApiResult<RickAndMortyResponse>> = safeApiCall {

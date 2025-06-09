@@ -1,11 +1,11 @@
 package id.neotica.rickpository.data.local
 
 import com.diamondedge.logging.logging
-import id.neotica.rickpository.domain.local.RickpositoryLocalDataSource
+import id.neotica.rickpository.domain.local.CharacterLocalDataSource
 
-class RickpositoryLocalDataSourceImpl(
+class CharacterLocalDataSourceImpl(
     private val dao: RickAndMortyDao,
-): RickpositoryLocalDataSource {
+): CharacterLocalDataSource {
     override suspend fun getPagingWithCharacter(id: Int): PagingWithCharacter? {
         val log = logging("marvis")
         val daos = dao.getPagingWithCharacter(id)

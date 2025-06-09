@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.diamondedge.logging.logging
 import id.neotica.rickpository.domain.ApiResult
-import id.neotica.rickpository.domain.CharacterRepository
+import id.neotica.rickpository.domain.remote.CharacterRepository
 import id.neotica.rickpository.domain.extension.extractPageNumberAfterEquals
 import id.neotica.rickpository.domain.model.RickAndMortyResponse
 import kotlinx.coroutines.flow.MutableStateFlow

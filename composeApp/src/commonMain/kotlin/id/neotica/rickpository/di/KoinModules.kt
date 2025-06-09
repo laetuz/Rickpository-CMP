@@ -1,9 +1,9 @@
 package id.neotica.rickpository.di
 
 import id.neotica.rickpository.data.CharacterRepositoryImpl
-import id.neotica.rickpository.data.local.RickpositoryLocalDataSourceImpl
-import id.neotica.rickpository.domain.CharacterRepository
-import id.neotica.rickpository.domain.local.RickpositoryLocalDataSource
+import id.neotica.rickpository.data.local.CharacterLocalDataSourceImpl
+import id.neotica.rickpository.domain.remote.CharacterRepository
+import id.neotica.rickpository.domain.local.CharacterLocalDataSource
 import id.neotica.rickpository.networking.ktorModule
 import id.neotica.rickpository.presentation.screen.characterdetail.CharacterDetailViewModel
 import id.neotica.rickpository.presentation.screen.characters.CharactersViewModel
@@ -21,7 +21,7 @@ val viewModelModules = module {
 
 val repositories = module {
     singleOf(::CharacterRepositoryImpl) bind CharacterRepository::class
-    singleOf(::RickpositoryLocalDataSourceImpl).bind(RickpositoryLocalDataSource::class)
+    singleOf(::CharacterLocalDataSourceImpl).bind(CharacterLocalDataSource::class)
 //    single<RickpositoryLocalDataSource> {???
 //        RickpositoryLocalDataSourceImpl(get())
 //    }

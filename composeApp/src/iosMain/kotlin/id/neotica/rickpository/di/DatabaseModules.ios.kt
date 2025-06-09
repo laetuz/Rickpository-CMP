@@ -2,7 +2,7 @@ package id.neotica.rickpository.di
 
 import androidx.room.RoomDatabase
 import id.neotica.rickpository.data.local.RickpositoryDb
-import id.neotica.rickpository.domain.CharacterRepository
+import id.neotica.rickpository.domain.remote.CharacterRepository
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.module.Module

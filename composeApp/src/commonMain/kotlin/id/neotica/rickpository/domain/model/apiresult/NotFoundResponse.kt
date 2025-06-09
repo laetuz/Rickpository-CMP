@@ -1,4 +1,4 @@
-package id.neotica.rickpository.domain.apiresult
+package id.neotica.rickpository.domain.model.apiresult
 
 import kotlinx.serialization.Serializable
 
